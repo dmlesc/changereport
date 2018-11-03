@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>TFS Changeset Explorer</title>
+   <script src="changereport/changereport.js"></script>
+   <style>
+      body {background-color:#252526;color:#009bd5;font-family:arial;font-size:13px}
+      a {color:white;text-decoration:none}
+      a.colored {color:#009bd5;text-decoration:none}
+      a:hover {text-decoration:underline}
+      table {border-spacing:5px;background-color:#2D2D30;color:white}
+      th {background-color:#252526;text-align:left;padding:5px;border: 1px solid #3F3F46;}
+      th.app {background-color:#007ACC}
+      tr:hover {background-color:#007ACC}
+      textarea {background-color:black;color:white;font-family:arial;font-size:13px}
+      select {background-color:black;color:white;font-family:arial;font-size:13px}
+      #detail {display:none;color:white}
+      .left20 {position:relative;left:20px}
+      .up5 {position:relative;top:-5px}
+      .up20 {position:relative;top:-20px}
+      .big {font-size:16px}
+      .retrieving {position:relative;left:20px;color:lime}
+   </style>
+</head>
+<body onload="init()">
+   <table id="apphead"><tr><th class="app">TFS Changeset Explorer</th></tr></table></br>
+   <div id="today"><a href="javascript:expandToday()"><img onmouseover="fillexpandImg(this)" onmouseout="unfillexpandImg(this)" src="changereport/expand.png"></a>Today</div>
+   <div id="sprints"></div>
+   <div id="detail" class="up20">
+      <a id="back2sprints" class="colored" href="javascript:back2sprints()">BACK</a></br></br>
+      <div id="changesetDetailhead" class="big">Changeset Details</div></br>
+      <div id="changesetDetail"></div>
+   </div>
+</body>
+</html>
